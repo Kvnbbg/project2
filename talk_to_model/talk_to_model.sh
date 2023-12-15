@@ -5,30 +5,50 @@ command_exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
-# Authorship details
-show_authorship_info() {
-  echo "🤖 AI Chat Terminal Interface by Kevin Marville"
-  echo "Author's GitHub: https://github.com/kvnbbg"
+# Function to install required commands using package managers
+install_command() {
+  local package_manager=$1
+  local package_name=$2
+
+  if command_exists "$package_manager"; then
+    sudo "$package_manager" install -y "$package_name"
+  else
+    echo "Unsupported package manager. Please install '$package_name' manually."
+    exit 1
+  fi
 }
 
-# Check for and install required commands
+# Function to check and install dependencies
 install_dependencies() {
   if ! command_exists "curl" || ! command_exists "jq"; then
     echo "Preparing the AI chat environment..."
 
     if command_exists "apt-get"; then
       sudo apt-get update
-      sudo apt-get install -y curl jq
+      install_command "apt-get" "curl"
+      install_command "apt-get" "jq"
     elif command_exists "yum"; then
-      sudo yum install -y curl jq
+      install_command "yum" "curl"
+      install_command "yum" "jq"
     elif command_exists "brew"; then
-      brew install curl jq
+      install_command "brew" "curl"
+      install_command "brew" "jq"
     else
       echo "Unsupported package manager. Please install 'curl' and 'jq' manually."
       exit 1
     fi
   fi
 }
+
+# Authorship details
+show_authorship_info() {
+  echo "🤖 AI Chat Terminal Interface by Kevin Marville"
+  echo "Author's GitHub: https://github.com/kvnbbg"
+}
+
+# Main script
+install_dependencies
+
 
 # Set Hugging Face API token
 set_api_token() {
