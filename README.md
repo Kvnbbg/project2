@@ -1,65 +1,107 @@
-# AI Chat Terminal Interface
+# **Step Tracker with AI Chat Terminal Interface**
 
-## Overview
+## **Overview**
 
-This terminal-based AI chat interface allows seamless conversations with Hugging Face's AI models. Interact with AI directly from your terminal and enjoy engaging conversations!
+The **Step Tracker with AI Chat Terminal Interface** is a terminal-based tool that allows users to seamlessly interact with Hugging Face's AI models. Through a simple and efficient chat interface, users can engage in real-time conversations with state-of-the-art AI directly from the command line.
 
-## Features
+## **Features**
 
-- Interact with Hugging Face's AI models
-- Seamless chat interface
-- Error handling for uninterrupted conversations
+- **AI-Powered Conversations**: Direct interaction with Hugging Face's advanced AI models.
+- **Simple Terminal Interface**: A user-friendly interface designed for smooth, uninterrupted chats.
+- **Robust Error Handling**: Built-in error management to ensure seamless user experience, even in case of interruptions.
 
-## Requirements
+## **Requirements**
 
-Ensure you have the following installed:
+Ensure you have the following prerequisites installed on your system:
 
-- `curl`
-- `jq`
+- [`curl`](https://curl.se/download.html) - for HTTP requests.
+- [`jq`](https://stedolan.github.io/jq/download/) - for parsing JSON data.
+- **Maven**: Ensure that [Apache Maven](https://maven.apache.org/download.cgi) is installed for running the project through Maven.
 
-## How to Run
+## **How to Run**
 
-### Step 1: Check Your Current Location
+You can run the project in two ways: by executing the shell script directly or by using Maven.
 
-Open your terminal and execute the following command to see where you are currently located within your file system:
+### **Option 1: Run via Shell Script**
+
+#### **Step 1: Verify Your Current Directory**
+
+Open your terminal and execute the following command to view the contents of your current directory:
 
 ```bash
 ls
 ```
 
-### Step 2: Navigate to the Folder
+This will help ensure you are in the correct directory or locate where the script is stored.
 
-Move to the directory containing the script using `cd`. For example, if your script is in a folder named "talk_to_model", execute:
+#### **Step 2: Navigate to the Project Directory**
+
+Move to the folder where the script is located. For instance, if your script is stored in the `talk_to_model` folder, navigate to it by running:
 
 ```bash
-cd ./user/talk_to_model
+cd /path/to/your/talk_to_model
 ```
 
-### Step 3: Run the Script
+Replace `/path/to/your/talk_to_model` with the actual path to the folder.
 
-Execute the script by typing the following command in the terminal:
+#### **Step 3: Execute the Script**
+
+Once in the correct directory, run the following command to start the AI chat interface:
 
 ```bash
 ./talk_to_model.sh
 ```
 
-This command will run the script and initiate the AI chat interface in your terminal.
+This will initiate the script, and you'll be able to interact with the AI directly through your terminal.
 
-### Example:
+### **Option 2: Run via Maven**
+
+If you prefer to run the project through Maven, follow these steps:
+
+#### **Step 1: Navigate to the Project Root Directory**
+
+Ensure you are in the root directory of your Maven project where the `pom.xml` file is located. To check your current directory, run:
+
+```bash
+ls
+```
+
+If needed, navigate to the correct directory:
+
+```bash
+cd /path/to/your/project
+```
+
+#### **Step 2: Use Maven to Run the Application**
+
+Execute the following Maven command to run the application:
+
+```bash
+mvn spring-boot:run
+```
+
+This will compile and execute the project, launching the AI chat terminal interface.
+
+### **Example:**
 
 ![Terminal Example](images/terminal_example.png)
 
-Replace `./user/talk_to_model` with the actual path where your script is located.
+This image showcases a typical conversation flow in the terminal.
 
-## System Information (Optional)
+> Note: Ensure that the script has executable permissions. If needed, you can grant them with the following command:
+> ```bash
+> chmod +x talk_to_model.sh
+> ```
 
-To display system information, the script can be enhanced to showcase details like OS, disk usage, memory usage, etc. Run the script to see system information displayed along with the chat interface.
+## **Optional: Display System Information**
 
-## Author
+The script can be enhanced to display system information such as the operating system, disk usage, and memory status alongside the chat interface. This provides added utility by combining system monitoring with AI interaction.
+
+## **Author**
 
 - **Kevin Marville**
 - **GitHub:** [kvnbbg](https://github.com/kvnbbg)
 
-## Acknowledgments
+## **Acknowledgments**
 
-Special thanks to Hugging Face for their incredible AI models and resources.
+Special thanks to **Hugging Face** for providing access to their powerful AI models and fostering innovation within the AI community.
