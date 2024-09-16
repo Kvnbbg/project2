@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: step-tracker-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: step-tracker
+  template:
+    metadata:
+      labels:
+        app: step-tracker
+    spec:
+      containers:
+      - name: step-tracker
+        image: your-dockerhub-repo/step-tracker:latest
+        ports:
+        - containerPort: 8080
