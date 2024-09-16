@@ -9,6 +9,8 @@ COPY target/step-tracker-0.0.1-SNAPSHOT.jar /app/step-tracker.jar
 
 # Expose the port the app will run on
 EXPOSE 8080
+EXPOSE 9090  # Prometheus metrics port
+
 
 # Command to run the application
 CMD ["java", "-jar", "step-tracker.jar"]
