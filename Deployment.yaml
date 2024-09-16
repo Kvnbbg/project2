@@ -14,6 +14,13 @@ spec:
     spec:
       containers:
       - name: step-tracker
-        image: your-dockerhub-repo/step-tracker:latest
+        image: kvnbbg/step-tracker:latest
         ports:
         - containerPort: 8080
+        - containerPort: 9090  # Exposing Prometheus port
+    readinessProbe:
+      httpGet:
+        path: /actuator/prometheus
+        port: 9090
+      initialDelaySeconds: 5
+      periodSeconds: 10
